@@ -1,0 +1,210 @@
+/* =========================================
+   Global Styles
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7fb;
+    color: #222;
+}
+
+/* =========================================
+   Header and Navigation
+   ========================================= */
+
+header {
+    background-color: #172554;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   Main Content
+   ========================================= */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section,
+article,
+aside {
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #172554;
+    margin-top: 0;
+}
+
+h3 {
+    color: #334155;
+}
+
+/* =========================================
+   Links
+   ========================================= */
+
+a {
+    color: #1d4ed8;
+}
+
+a:hover {
+    color: #7c3aed;
+}
+
+/* =========================================
+   Images
+   ========================================= */
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 10px 20px 0;
+}
+
+section img,
+article img {
+    max-height: 350px;
+    object-fit: cover;
+}
+
+/* =========================================
+   Lists
+   ========================================= */
+
+ul,
+ol {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   Blockquote
+   ========================================= */
+
+blockquote {
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 5px solid #172554;
+    background-color: #eef2ff;
+    font-style: italic;
+}
+
+/* =========================================
+   Tables
+   ========================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+th,
+td {
+    border: 1px solid #cbd5e1;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #e2e8f0;
+}
+
+/* =========================================
+   Video
+   ========================================= */
+
+iframe {
+    max-width: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+
+footer {
+    background-color: #172554;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer a {
+    color: white;
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    main {
+        padding: 20px 12px;
+    }
+
+    section,
+    article,
+    aside {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+}
