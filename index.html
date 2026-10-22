@@ -1,119 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sattwik Bhattacharjee | Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sattwik Bhattacharjee | AI &amp; Software Engineer</title>
+<meta name="description" content="Portfolio of Sattwik Bhattacharjee, M.S. Computer Science student at Georgia State University working on machine learning, deep learning, and software engineering.">
+<style>
+:root{
+  --bg:#ffffff; --bg2:#f5f8fb; --text:#1b2530; --muted:#5a6775; --line:#dfe6ee;
+  --accent:#1f4e79; --accent2:#2d6aa3; --card:#ffffff; --chip:#e8f0f8; --chiptext:#1f4e79;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f151c; --bg2:#151d27; --text:#e6edf4; --muted:#9aa8b8; --line:#26323f;
+    --accent:#7db4e6; --accent2:#9ccbf2; --card:#16202b; --chip:#1c2c3d; --chiptext:#a9d0f3;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f151c; --bg2:#151d27; --text:#e6edf4; --muted:#9aa8b8; --line:#26323f;
+  --accent:#7db4e6; --accent2:#9ccbf2; --card:#16202b; --chip:#1c2c3d; --chiptext:#a9d0f3;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{font-weight:700;color:var(--text);letter-spacing:.2px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{color:var(--muted);font-size:14.5px}
+.nav ul a:hover{color:var(--accent);text-decoration:none}
+.hero{padding:72px 0 56px;background:var(--bg2);border-bottom:1px solid var(--line)}
+.hero-grid{display:flex;align-items:center;gap:40px;justify-content:space-between}
+.hero-text{flex:1;min-width:0}
+.avatar{width:220px;height:220px;border-radius:50%;object-fit:cover;flex:none;border:4px solid var(--card);box-shadow:0 6px 24px rgba(15,30,50,.18)}
+.hero .eyebrow{color:var(--accent);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-size:clamp(34px,6vw,52px);line-height:1.1;margin:10px 0 14px}
+.hero p.lead{font-size:clamp(17px,2.4vw,20px);color:var(--muted);max-width:660px;margin:0 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:600;font-size:15px;border:1px solid var(--accent);color:var(--accent);background:transparent}
+.btn.primary{background:var(--accent);color:var(--bg)}
+.btn:hover{text-decoration:none;filter:brightness(1.08)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:40px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.stat b{display:block;font-size:24px;color:var(--accent)}
+.stat span{color:var(--muted);font-size:13.5px}
+section{padding:60px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:26px;margin:0 0 8px}
+h2+.sub{color:var(--muted);margin:0 0 28px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.card h3{margin:0 0 2px;font-size:18px}
+.meta{color:var(--muted);font-size:13.5px;margin:0 0 10px}
+.card p{margin:0 0 10px}
+.card ul{margin:0 0 12px;padding-left:18px}
+.card li{margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.chip{background:var(--chip);color:var(--chiptext);border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:600}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.skills h3{font-size:15px;margin:0 0 10px;color:var(--accent)}
+.timeline .item{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:0 0 26px}
+.timeline .when{color:var(--muted);font-size:14px}
+.timeline h3{margin:0;font-size:17px}
+.timeline .org{color:var(--muted);font-size:14.5px;margin-bottom:6px}
+.timeline ul{margin:6px 0 0;padding-left:18px}
+.pub{padding:16px 0;border-bottom:1px solid var(--line)}
+.pub:last-child{border-bottom:0}
+.pub h3{margin:0 0 4px;font-size:16.5px;line-height:1.4}
+.pub .meta{margin:0 0 6px}
+.contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+footer{padding:28px 0;color:var(--muted);font-size:14px;text-align:center;border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .hero-grid{flex-direction:column-reverse;align-items:flex-start;gap:22px}
+  .avatar{width:140px;height:140px}
+}
+@media (max-width:640px){
+  .nav ul{gap:12px}
+  .nav ul a{font-size:13.5px}
+  .nav ul li:nth-child(n+4){display:none}
+  .brand{font-size:15px}
+  .timeline .item{grid-template-columns:1fr;gap:2px}
+  .hero{padding:48px 0 40px}
+  section{padding:44px 0}
+}
+</style>
 </head>
-
 <body>
-     <!-- Header and Navigation -->
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Me</a>
-            <a href="projects.html">Projects</a>
-        </nav>
-    </header>
 
-     <!-- Main Content -->
-    <main>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Sattwik Bhattacharjee</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-        <!-- Hero Section -->
-        <section id="home">
-            <h1>Sattwik Bhattacharjee</h1>
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+    <div class="hero-text">
+    <div class="eyebrow">M.S. Computer Science · Georgia State University</div>
+    <h1>I build and evaluate AI systems and the software around them.</h1>
+    <p class="lead">Graduate student (Spring 2027) working across machine learning, deep learning, and mobile and web software. I like turning ideas into tested, working applications and measuring honestly how well they work.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn" href="mailto:sbhattacharjee6@student.gsu.edu">Email me</a>
+      <a class="btn" href="https://github.com/sattwikk">GitHub</a>
+    </div>
+    </div>
+    <img class="avatar" src="profile.png" alt="Portrait of Sattwik Bhattacharjee" width="220" height="220">
+    </div>
+    <div class="stats">
+      <div class="stat"><b>3</b><span>peer-reviewed publications</span></div>
+      <div class="stat"><b>15+</b><span>client projects delivered</span></div>
+      <div class="stat"><b>1,500+</b><span>students reached with courses</span></div>
+      <div class="stat"><b>Spring 2027</b><span>M.S. graduation</span></div>
+    </div>
+  </div>
+</div>
 
-            <p>
-                Computer Science graduate student and aspiring software engineer
-                passionate about artificial intelligence, machine learning, and
-                practical software development.
-            </p>
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="sub">Atlanta, GA</p>
+    <p>I am a Computer Science graduate student at Georgia State University with a B.Tech in Computer Science and Business Systems. My work spans deep learning research, from spiking and graph neural networks to reinforcement learning, and full applications that I design, build, and test from the interface to the data layer.</p>
+    <p>Since 2022 I have also co-run BitsGate, an IT solutions company, where I own client work from requirements through deployment. I care about clear documentation, honest evaluation against baselines, and software that behaves reliably.</p>
+  </div>
+</section>
 
-            <p>
-                Welcome to my personal portfolio, where I share my academic
-                journey, technical skills, research interests, and projects.
-            </p>
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="sub">Selected work from Georgia State coursework and research.</p>
+    <div class="grid2">
 
-            <a href="#skills">Explore My Skills</a>
-        </section>
-                <!-- Skills Section -->
-        <section id="skills">
-            <h2>My Skills</h2>
+      <article class="card">
+        <h3>RoutePulse – The Food Runner</h3>
+        <p class="meta">Mar 2026 – May 2026 · Georgia State University</p>
+        <ul>
+          <li>Built a real-time product end to end, from mobile UI to data layer, coordinating customers, restaurants, and drivers.</li>
+          <li>Designed an explainable driver-assignment algorithm with geohash filtering and transactional reassignment to prevent duplicate order claims under concurrent use.</li>
+        </ul>
+        <div class="chips"><span class="chip">Flutter</span><span class="chip">Firebase</span><span class="chip">Firestore</span><span class="chip">FCM</span><span class="chip">OpenStreetMap</span></div>
+      </article>
 
-            <p>
-                I enjoy combining software engineering with intelligent systems
-                to build practical and useful applications.
-            </p>
+      <article class="card">
+        <h3>Bricks &amp; Stones Recipe Studio</h3>
+        <p class="meta">Fall 2026 · Web Programming, Georgia State University</p>
+        <ul>
+          <li>Built a recipe and ordering site with servings, favorites, menu, and step-by-step cooking, with all state handled in pure CSS.</li>
+          <li>Prototyped six AI interface concepts simulated with fixed rules, and ran 29 automated layout, accessibility, and responsiveness checks.</li>
+        </ul>
+        <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Accessibility</span></div>
+      </article>
 
-            <ul>
-                <li>Python and PyTorch</li>
-                <li>Artificial Intelligence and Machine Learning</li>
-                <li>Flutter and Mobile App Development</li>
-                <li>Firebase and SQL</li>
-                <li>Computer Vision and Deep Learning</li>
-                <li>Reinforcement Learning</li>
-            </ul>
-        </section>
-                <!-- Profile Section -->
-        <section id="profile">
-            <h2>A Little About Me</h2>
+      <article class="card">
+        <h3>Mystery Puzzle &amp; Escape Room Companion</h3>
+        <p class="meta">Mar 2026 – May 2026 · Georgia State University</p>
+        <ul>
+          <li>Shipped an offline-first app with AI-assisted hints and a 7-table relational SQLite schema.</li>
+          <li>Covered with unit, widget, and integration tests.</li>
+        </ul>
+        <div class="chips"><span class="chip">Flutter</span><span class="chip">Riverpod</span><span class="chip">SQLite</span></div>
+      </article>
 
-            <img src="images/profile.jpg"
-                 alt="Portrait of Sattwik Bhattacharjee, a Computer Science graduate student">
+      <article class="card">
+        <h3>Spiking Neural Network vs. Classical Baselines</h3>
+        <p class="meta">Jan 2026 – Apr 2026 · Research project</p>
+        <ul>
+          <li>Cleaned and encoded 70,000 Fashion-MNIST images and trained a spiking neural network in PyTorch.</li>
+          <li>Benchmarked it against a scikit-learn RBF-SVM (90.02%). The spiking network reached 85.47% accuracy with about 50× fewer active compute events, quantifying the accuracy–efficiency trade-off.</li>
+        </ul>
+        <div class="chips"><span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">snnTorch</span><span class="chip">scikit-learn</span></div>
+      </article>
 
-            <img src="images/gsu.jpg"
-                 alt="Georgia State University campus">
+      <article class="card">
+        <h3>Structure-Aware SDN Assimilation with GNNs</h3>
+        <p class="meta">Oct 2025 – Dec 2025 · Research project</p>
+        <ul>
+          <li>Proposed a hybrid NetBERT (transformer) + GCN/GAT architecture.</li>
+          <li>Represented network configurations as graphs with 3 node types and 3 relationship types to preserve relationships lost in text-only mapping.</li>
+        </ul>
+        <div class="chips"><span class="chip">NetBERT</span><span class="chip">GNN</span><span class="chip">NLP</span><span class="chip">SDN</span></div>
+      </article>
 
-            <img src="images/rocket-launch.jpg"
-                 alt="Rocket launch controller project">
-            <p>
-                My interests include <strong>artificial intelligence</strong>,
-                <em>machine learning</em>, computer vision, and software
-                development.<br>
-                I enjoy learning new technologies and turning ideas into
-                working applications.
-            </p>
+      <article class="card">
+        <h3>PPO Reinforcement Learning for TCP Congestion Control</h3>
+        <p class="meta">Feb 2026 – May 2026 · Research project</p>
+        <ul>
+          <li>Trained a PPO agent (15,000 timesteps, stochastic packet loss) and benchmarked it against static TCP.</li>
+          <li>The agent sustained more stable throughput under variable bandwidth.</li>
+        </ul>
+        <div class="chips"><span class="chip">PPO</span><span class="chip">Gymnasium</span><span class="chip">Stable-Baselines3</span></div>
+      </article>
 
-            <hr>
+    </div>
+  </div>
+</section>
 
-            <p>
-                <strong>Current focus:</strong> building practical software
-                while expanding my knowledge of intelligent systems.
-            </p>
-        </section>
-                <!-- Video Section -->
-        <section id="media">
-            <h2>My Interest in Technology</h2>
+<section id="research">
+  <div class="wrap">
+    <h2>Research &amp; Publications</h2>
+    <p class="sub">Three peer-reviewed papers.</p>
 
-            <p>
-                I am interested in how artificial intelligence and modern
-                software technologies can be used to solve real-world problems.
-            </p>
+    <div class="pub">
+      <h3>Cure-Net: A Deep Learning Framework for the Proactive Detection of Parkinson’s Disease via Automated Handwriting Analysis</h3>
+      <p class="meta">SN Computer Science, 2026</p>
+      <p>CNN-based framework for automated Parkinson’s screening: 92.57% balanced accuracy on HandPD Spiral–Meander, and 98.05% and 97.34% accuracy across NewHandPD tasks.</p>
+      <a href="https://doi.org/10.1007/s42979-026-04929-2">DOI: 10.1007/s42979-026-04929-2</a>
+    </div>
 
-            <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/aircAruvnKk"
-                title="Introduction to Neural Networks"
-                allowfullscreen>
-            </iframe>
-        </section>
+    <div class="pub">
+      <h3>Navigating Brain Tumor Complexity: A Deep Learning Approach for Multimodal Segmentation Framework with 2D U-NET Architecture</h3>
+      <p class="meta">2025 4th OPJU International Technology Conference (OTCON), IEEE</p>
+      <p>2D U-Net for tumor segmentation from multimodal medical images, evaluated quantitatively (95.13% training and 82.14% testing accuracy).</p>
+      <a href="https://doi.org/10.1109/OTCON65728.2025.11071223">DOI: 10.1109/OTCON65728.2025.11071223</a>
+    </div>
 
-    </main>
-     <!-- Footer -->
-    <footer>
-        <p>
-            &copy; 2026 Sattwik Bhattacharjee. All rights reserved.
-        </p>
+    <div class="pub">
+      <h3>Integrating Brain-Computer Interface (BCI) for Assessing Olfactory Perceptual-Ability of Human Subjects using TSK-Induced Interval Type-2 Fuzzy Classifier</h3>
+      <p class="meta">GRENZE International Journal of Engineering &amp; Technology, Vol. 11, Issue 1, pp. 1685–1693, 2025</p>
+      <p>Analyzed EEG responses to 5 odor stimuli across 3 concentration levels and compared multiple classifiers with the Friedman statistical test.</p>
+    </div>
+  </div>
+</section>
 
-        <p>
-            <a href="mailto:sbhattacharjee6@student.gsu.edu">
-                Email Me
-            </a>
-        </p>
-    </footer>
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience &amp; Education</h2>
+    <p class="sub">&nbsp;</p>
+    <div class="timeline">
+      <div class="item">
+        <div class="when">Sep 2022 – Present</div>
+        <div><h3>Co-Founder, BitsGate</h3>
+          <div class="org">IT solutions company</div>
+          <ul>
+            <li>Delivered 15+ client projects worldwide across web, mobile, security, and IoT, owning work from requirements through deployment.</li>
+            <li>Created technical education content and courses reaching 1,500+ students and aspiring developers.</li>
+          </ul></div>
+      </div>
+      <div class="item">
+        <div class="when">Jun 2024 – Oct 2024</div>
+        <div><h3>Intern, Twist N Turns</h3>
+          <ul>
+            <li>Engineered and deployed a cloud-based facial-recognition system for attendance, automating identification and centralized profile management.</li>
+            <li>Designed digital Profile Cards to improve client interaction and feedback collection.</li>
+          </ul></div>
+      </div>
+      <div class="item">
+        <div class="when">Fall 2025 – Spring 2027</div>
+        <div><h3>M.S. in Computer Science</h3><div class="org">Georgia State University</div></div>
+      </div>
+      <div class="item">
+        <div class="when">Aug 2022 – May 2025</div>
+        <div><h3>B.Tech, Computer Science &amp; Business Systems</h3><div class="org">Institute of Engineering &amp; Management, Kolkata</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="sub">&nbsp;</p>
+    <div class="skills">
+      <div class="card"><h3>Languages</h3><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Java</span><span class="chip">C</span><span class="chip">Dart</span><span class="chip">HTML/CSS</span></div></div>
+      <div class="card"><h3>AI &amp; Machine Learning</h3><div class="chips"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">scikit-learn</span><span class="chip">Deep Learning</span><span class="chip">Computer Vision</span><span class="chip">Reinforcement Learning</span><span class="chip">NLP</span></div></div>
+      <div class="card"><h3>Software &amp; Data</h3><div class="chips"><span class="chip">Flutter</span><span class="chip">Firebase</span><span class="chip">Firestore</span><span class="chip">SQLite</span><span class="chip">Pandas</span><span class="chip">NumPy</span></div></div>
+      <div class="card"><h3>Practices &amp; Cloud</h3><div class="chips"><span class="chip">Git/GitHub</span><span class="chip">Unit &amp; Integration Testing</span><span class="chip">Docker</span><span class="chip">AWS (Cloud Practitioner)</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="sub">Open to full-time roles in machine learning and software engineering.</p>
+    <p>The best way to reach me is by email.</p>
+    <div class="contact">
+      <a class="btn primary" href="mailto:sbhattacharjee6@student.gsu.edu">sbhattacharjee6@student.gsu.edu</a>
+      <a class="btn" href="https://github.com/sattwikk">github.com/sattwikk</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 Sattwik Bhattacharjee · Atlanta, GA</footer>
 </body>
 </html>
